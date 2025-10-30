@@ -2,8 +2,7 @@ import java.util.*;
 
 public class CheckingAccount implements HasMenu {
 	Scanner input = new Scanner(System.in);
-	protected double balance = 0; //ASK ABOUT THIS - originally it was private, but savings needs to use it so I changed it to protected.
-				      //could just be one of those things that will all come together in the end, but I'm not sure...
+	protected double balance = 0;
 
 	public CheckingAccount(){
 	       	this.balance = 0;
