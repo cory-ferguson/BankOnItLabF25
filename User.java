@@ -32,7 +32,14 @@ abstract class User implements HasMenu, Serializable {
 	}//end getUserName
 	
 	public void setPIN(String PIN){
-		this.PIN = PIN;
+		//checks for four digits
+		if (PIN.matches("^\\d{4}$")){
+			this.PIN = PIN;
+		} else {
+			System.out.println("Pin must be four digits, all numberic");
+			System.out.println("Setting PIN to 0000");
+			this.PIN = "0000";
+		}//end if
 	}//end setPIN
 	
 	public String getPIN(){

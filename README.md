@@ -159,7 +159,12 @@ abstract class User implements HasMenu, Serializable
             return this.userName
 
         void setPIN(PIN)
-            this.PIN = PIN
+            //check for four digits
+            if four digits
+                this.PIN = PIN
+            else
+                set pin to 0000
+                print "Invalid PIN"
 
         string getPIN()
             return this.PIN
