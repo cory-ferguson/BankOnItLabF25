@@ -57,7 +57,7 @@ class CheckingAccount implements HasMenu
 
 		string getBalanceString()
 			//formats the balance nicely
-			print "$" balance
+			print "$" balance //format balance to have two decimal points
 
 		void setBalance(balance)
 			this.balance = balance
@@ -122,6 +122,11 @@ class SavingsAccount extends Checking Account
 
         double getInterestRate()
             return this.iterestRate;
+
+Milestone 3:
+Finish UserClass
+Implement and test Customer
+(Note that testing Customer also involves testing User)
 
 # User 
 

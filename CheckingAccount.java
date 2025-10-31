@@ -1,4 +1,5 @@
 import java.util.*;
+import java.lang.*;
 
 public class CheckingAccount implements HasMenu {
 	Scanner input = new Scanner(System.in);
@@ -53,8 +54,7 @@ public class CheckingAccount implements HasMenu {
 	}//end getBalance
 	
 	public String getBalanceString(){
-		String output = String.valueOf(balance);
-		System.out.print("$" + output);
+		System.out.print("$" + String.format("%.2f", balance));
 		return "";
 	}//end getBalanceString
 	
