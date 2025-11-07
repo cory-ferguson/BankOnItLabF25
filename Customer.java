@@ -10,23 +10,15 @@ public class Customer extends User {
 	}//end main
 	
 	public Customer(){
-		boolean keepGoing = true;
-		while (keepGoing){
-			System.out.print("User name: " );
-                	String response = input.nextLine();
-                	setUserName(response);
+		this.userName = userName;
+		this.PIN = PIN;
 
-                	System.out.print("PIN: ");
-                	String responsePIN = input.nextLine();
-                	setPIN(responsePIN);
-			if (login()){
-				//System.out.println(login());
-				start();
-				keepGoing = false;
-			} else {
-				System.out.println("Invalid username or PIN");
-			}//end if
-		}//end while
+		if(login()){
+			start();
+		} else {
+			System.out.println("Invalid username or PIN.");
+		}//end if
+
 	}//end constructor
 	
 	public Customer(String userName, String PIN){
@@ -35,7 +27,7 @@ public class Customer extends User {
 	}//end constructor
 	
 	public void start(){
-		login(userName, PIN);
+		//login(userName, PIN);
 		boolean keepGoing = true;
 		while(keepGoing){
 			String response = menu();

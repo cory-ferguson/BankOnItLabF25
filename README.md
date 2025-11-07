@@ -229,12 +229,127 @@ class Customer extends User
             create a string for response
             put input into response
             call setPIN(response)
-            //maybe check to make sure pin is a number but i dont want to worry about that rn
-            //i could convert it to an int and then back into a string maybe just to check
-            //also would have to make sure its 4 digits ...
        
         string getReport()
             print Checking Account Balance: 
             call getBalanceString() from CheckingAccount class?
             print Savings Account Balance: 
             call getBalanceString() from SavingsAccount class?
+
+# Bank on it part 2
+
+# Admin
+public
+    Admin()
+    
+    string menu()
+        print "Admin Menu"
+        print 0) Exit this menu
+        print 1) Full customer report
+        print 2) Add user
+        print 3) Apply interest to savings account
+        create a string for response
+        put input into response
+        return response
+    
+    string getReport()
+        //This should be showing every customer report
+        call fullCustomerReport() //from Bank
+    
+    void start()
+        //leave this empty    
+
+# Bank
+private
+    admin: Admin()
+    customer ArrayList //or a class that extends an array list of customers
+
+public
+    Bank()
+        call loadSampleCustomers() //will be commented out - there for testing
+        call saveCustomers()    // will be commented out - there for testing
+        call loadCustomers()
+        call start()
+        call saveCustomers()        
+    
+    void main()
+        new Bank()
+
+    void loadSampleCustomers()
+        add customers to the customer arrayList?
+        create three customers 
+        Alice, Cecking Balance = 1000, Savings Balance = 1000
+        Bob, Checking Balance = 0, Savings Balance = 0
+        Cindy, Checking Balance = 0, Savings Balance = 0
+
+    void loadCustomers()
+        call from the customer file // I think this will be made eventually, but is one of the last things...
+        loop through and put all customers into customer arrayList?
+        //this is more with the serialization    
+
+    void saveCusomters()
+        //not too sure what to do here 
+        //I would say just save it to the customer array, but that should be happening when adding them to the array in load, no? 
+        //unless if loading is literally just opening the file and saving is adding everything to the arrayList... going with this for now
+        put customer into the arrayList
+        //this is with serialization
+
+    void fullCustomerReport()
+        //this will be called in Admin
+        loop through the customer array list
+            print "User: " customerName, "Checking: " checkingBalance, "Savings: ", savingsBalance, endln
+            //do this until end of customer array list
+    
+    void addUser()
+        get userName()
+        set userName()
+        get PIN
+        set PIN
+        
+
+    void applyInterest
+        print 
+
+    void loginAsCustomer()
+
+
+    String menu()
+        print Bank Menu
+        print 0) Exit System
+        print 1) Login as Admin
+        print 2) Login as Customer
+        // void in UML, but I think it should be a string
+        create a string for response
+        put input into response
+        return response        
+
+    void start()
+        create a boolean for keepGoing set to true
+        while keepGoing
+            create a string for response set to menu
+            if response = 0
+                set keepGong to false
+                //exits program
+            if response = 1
+                call startAdmin()
+            if response = 2
+                call loginAsCustomer()
+            else
+                print invalid input
+
+    void startAdmin()
+        create a boolean for keepGoing set to true
+        while keepGoing
+            create a string for response set to admin menu //unsure if this is how I'm supposed to do this...
+            if response = 0
+                set keepGoing to false
+                //should go back to bank menu
+            if response = 1
+                call getReport() from admin //again unsure if this is correct
+            if resonse = 2
+                call addUser()
+            if response = 3
+                call applyInterest()
+            else
+                print invalid input
+

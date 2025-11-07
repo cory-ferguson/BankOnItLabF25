@@ -2,7 +2,7 @@ import java.util.*;
 
 public class SavingsAccount extends CheckingAccount{
 	Scanner input = new Scanner(System.in);
-	private double interestRate = 0;
+	private double interestRate = .05;
 
 	public static void main(String[] args){
 		new SavingsAccount();
@@ -12,6 +12,7 @@ public class SavingsAccount extends CheckingAccount{
 		double calcInt = interestRate * balance;
 		double newBalance = calcInt + balance;
 		setBalance(newBalance); //unsure if I need this
+		getBalanceString();
 	}//end calcInterest
 	
 	public void setInterestRate(){

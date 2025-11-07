@@ -1,7 +1,8 @@
 import java.util.*;
 import java.lang.*;
+import java.io.*;
 
-public class CheckingAccount implements HasMenu {
+public class CheckingAccount implements HasMenu, Serializable {
 	Scanner input = new Scanner(System.in);
 	protected double balance = 0;
 

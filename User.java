@@ -7,21 +7,33 @@ abstract class User implements HasMenu, Serializable {
 	Scanner input = new Scanner(System.in);
 
 	public boolean login(){
-		 if(userName.equals("Alice") && PIN.equals("0000")){
-                        System.out.println("Login Successful.");
+		//this one takes user input
+
+		System.out.print("User name: ");
+		String response = input.nextLine();
+                        //setUserName(response);
+
+                System.out.print("PIN: ");
+                String responsePIN = input.nextLine();
+                        //setPin(responsePIN);
+
+                if(response.equals(userName) && responsePIN.equals(PIN)){
+                	System.out.println("Login Successful.");
                         return true;
                 } else {
+                	System.out.println("Incorrect username or pin.");
                         return false;
                 }//end if
+
 	}//end login
 	
 	public boolean login(String userName, String PIN){
-		if(userName.equals("Alice") && PIN.equals("0000")){
+		if(userName.equals(userName) && PIN.equals(PIN)){
 			return true;
 		} else {
 			return false;
 		}//end if
-	}//end login
+	}//end login(userName, PIN)
 	
 	public void setUserName(String userName){
 		this.userName = userName;
